@@ -1,0 +1,176 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --cyan: hsl(179, 62%, 43%);
+    --light-cyan: hsl(179, 47%, 52%);
+    --yellow-neon: hsl(71, 73%, 54%);
+    --light-gray: hsl(204, 43%, 93%);
+    --grayish-blue: hsl(218, 22%, 67%);
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    font-size: 16px;
+    font-family: "Karla", sans-serif;
+    color: white;
+    background-color: var(--light-gray);
+}
+
+.card {
+    display: grid;
+    grid-template-areas:
+        "join join"
+        "price feature";
+    box-shadow: 1px 1px 15px 0.1px rgb(214, 212, 212);
+    border-radius: 8px;
+    width: 660px;
+}
+
+section {
+    padding: 30px 40px;
+}
+
+.join {
+    background-color: white;
+    grid-area: join;
+    border-radius: 8px;
+}
+
+.join .title {
+    color: var(--cyan);
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.join .sub-title {
+    color: var(--yellow-neon);
+    margin-bottom: 10px;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.join p {
+    color: var(--grayish-blue);
+    line-height: 22px;
+}
+
+.price {
+    grid-area: price;
+    background-color: var(--cyan);
+    border-radius: 0 0 0 8px;
+}
+
+.price .title {
+    font-weight: 400;
+}
+
+.price span {
+    color: white;
+    font-size: xx-large;
+    margin-right: 10px;
+}
+
+.price .per-month {
+    color: var(--light-gray);
+    margin: 20px 0 10px 0;
+}
+
+.price button {
+    background: var(--yellow-neon);
+    padding: 15px;
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    box-shadow: 5px 5px 11px 1px rgba(54, 54, 54, 0.247);
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.price button:hover {
+    background: hsl(71, 83%, 43%);
+    transform: translateY(-2px);
+}
+
+.price button:active {
+    background: hsl(71, 80%, 40%);
+    transform: translateY(2px);
+}
+
+.price button a {
+    text-decoration: none;
+    color: white;
+}
+
+.feature {
+    grid-area: feature;
+    background-color: var(--light-cyan);
+    border-radius: 0 0 8px 0;
+
+    padding-right: 90px;
+}
+
+.feature .title {
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.feature ul {
+    list-style: none;
+    line-height: 22px;
+    font-size: 14px;
+
+}
+
+.copyr,
+a {
+    color: royalblue;
+    margin-top: 25px;
+}
+
+@media(max-width: 675px) {
+    body {
+        flex-direction: row;
+    }
+
+    section {
+        padding: 25px;
+        
+    }
+
+    .card {
+        margin: 50px 20px;
+        max-width: 370px;
+        
+    }
+
+    .join {
+        grid-row: 1/2;
+        grid-column: 1/2;
+    }
+
+    .price {
+
+        grid-row: 2/2;
+        grid-column: 1/2;
+        border-radius: 0;
+    }
+
+    .feature {
+        grid-row: 3/3;
+        grid-column: 1/2;
+        border-radius: 0 0 8px 8px;
+    }
+
+    .copyr {
+        writing-mode: vertical-lr;
+        margin-left: -10px;
+    }
+}
